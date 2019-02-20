@@ -1,0 +1,5 @@
+---
+workflow_folder: C:/laurent
+docroot: C:/faspex_packages
+logger: stdout
+loglevel: 0

@@ -1,0 +1,5 @@
+---
+logger:	stdout
+loglevel: 0
+workflow_folder: tmp/w
+docroot: tmp/d

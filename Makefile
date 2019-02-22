@@ -14,8 +14,8 @@ pack: doc
 doc: README.pdf
 
 README.pdf: README.md
-	pandoc -T XXX --css=file:toto --number-sections --resource-path=. --toc -V margin-left=.2in -V margin-right=.2in -V margin-top=.2in -V margin-bottom=.2in -V fontsize=12pt -V papersize=A4 --pdf-engine=wkhtmltopdf --metadata pagetitle=README -o README.pdf README.md
-
+	pandoc -T XXX --number-sections --resource-path=. --toc -V margin-left=.2in -V margin-right=.2in -V margin-top=.2in -V margin-bottom=.2in -V fontsize=12pt -V papersize=A4 --pdf-engine=wkhtmltopdf --metadata pagetitle=README -o README.pdf README.md
+# --css=file:style.css 
 test: test/tmp/.done
 
 test/tmp/.done:

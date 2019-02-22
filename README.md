@@ -1,11 +1,11 @@
 % Faspex File Mover Post Processing Tool
 
-This document present a specific Faspex post-processing tool that extends Faspex behaviour for simple integration into external workflow managers based on hot folders. By configuring a dropbox with special metadata (with specially formated values), files are moved to specific folders, also configured in the metadata field.
+This document present a specific Faspex post-processing tool that extends Faspex behaviour for simple integration into external workflow managers based on hot folders. By configuring a dropbox with special metadata (with specially formated values), files are moved fro  package storage to specific folders, also configured in the metadata field.
 
 # Prerequisites
 
-* Faspex (4.0+) and Enterprise Server (3.7+) installed on same system
-* Faspex and Enterprise Server are configured for normal package processing
+* IBM Aspera Faspex v4.0+
+* Service user running Faspex has file access rights to both: docroot of Faspex transfer user and destination folder where files need to be moved 
 
 # Operating System
 
@@ -32,6 +32,10 @@ Then, place the following files in this folder:
 
 If there is a file named `faspex_postprocessing.ba_`, then rename it to `faspex_postprocessing.bat` (gmail does not allow sending ".bat" files in email)
 
+# Note on path format
+
+Paths shall use forward slash `/`, even on Windows. including in UNC paths like `//server/share`.
+
 # Tool Configuration
 
 By default the tool will load its configuration file from the same folder as the script. Alternatively, another copnfiguration file can be specified as a first argument to the script.
@@ -43,8 +47,6 @@ Edit the file: `faspex_postprocessing.yaml`, it shall look like:
 workflow_folder: E:/workflow
 docroot: E:/
 ```
-
-Note that paths shall use forward slash `/`, even on Windows. including in UNC paths like `//server/share`.
 
 The configuration file supports the following values:
 
